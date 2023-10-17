@@ -15,30 +15,51 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\engin\core\app.c">
+    <ClCompile Include="src\engine\core\app.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engin\global.c">
+    <ClCompile Include="src\engine\global.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\game\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engin\test.cpp">
+    <ClCompile Include="src\engine\core\window.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\render\render.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\core\logger.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\engine\platform\win32.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\engin\core\app.h">
+    <ClInclude Include="src\engine\core\app.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engin\defines.h">
+    <ClInclude Include="src\engine\defines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engin\global.h">
+    <ClInclude Include="src\engine\global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\engin\Pocket.h">
+    <ClInclude Include="src\engine\Pocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\render\render.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\core\logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\engine\platform\platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

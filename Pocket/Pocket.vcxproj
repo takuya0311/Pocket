@@ -141,16 +141,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\engin\core\app.c" />
-    <ClCompile Include="src\engin\global.c" />
-    <ClCompile Include="src\engin\test.cpp" />
+    <ClCompile Include="src\engine\core\app.c" />
+    <ClCompile Include="src\engine\core\logger.c" />
+    <ClCompile Include="src\engine\core\window.c" />
+    <ClCompile Include="src\engine\global.c" />
+    <ClCompile Include="src\engine\platform\win32.c" />
+    <ClCompile Include="src\engine\render\render.c" />
     <ClCompile Include="src\game\main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\engin\core\app.h" />
-    <ClInclude Include="src\engin\defines.h" />
-    <ClInclude Include="src\engin\global.h" />
-    <ClInclude Include="src\engin\Pocket.h" />
+    <ClInclude Include="src\engine\core\app.h" />
+    <ClInclude Include="src\engine\core\logger.h" />
+    <ClInclude Include="src\engine\core\window.h" />
+    <ClInclude Include="src\engine\defines.h" />
+    <ClInclude Include="src\engine\global.h" />
+    <ClInclude Include="src\engine\platform\platform.h" />
+    <ClInclude Include="src\engine\Pocket.h" />
+    <ClInclude Include="src\engine\render\render.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
