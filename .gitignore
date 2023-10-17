@@ -8,7 +8,9 @@
 *.dll
 *.vcxproj
 *.vcxproj.filters
-/bin-int
+bin-int/
+bin/
+.vs/
 
 # User-specific files
 *.rsuser
