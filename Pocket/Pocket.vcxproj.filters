@@ -24,7 +24,7 @@
     <ClCompile Include="src\game\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\engin\Source.cpp">
+    <ClCompile Include="src\engin\test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
