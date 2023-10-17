@@ -24,6 +24,9 @@
     <ClCompile Include="src\game\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\engin\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\engin\core\app.h">

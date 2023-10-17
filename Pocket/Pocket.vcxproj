@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="src\engin\core\app.c" />
     <ClCompile Include="src\engin\global.c" />
+    <ClCompile Include="src\engin\Source.cpp" />
     <ClCompile Include="src\game\main.c" />
   </ItemGroup>
   <ItemGroup>
