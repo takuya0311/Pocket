@@ -1,7 +1,7 @@
 #pragma once
-#include "core/app.h"
-#include "core/window.h"
-#include "render/render.h"
+#include "core/app_internal.h"
+#include "core/window_internal.h"
+#include "render/render_internal.h"
 
 typedef struct global
 {

@@ -1,14 +1,15 @@
 #pragma once
+#include "../defines.h"
 
-typedef enum log_level
+enum log_level
 {
 	LOG_FATAL,
 	LOG_ERROR,
 	LOG_INFO,
-	LOG_DEBUG
+	LOG_DEBUG,
 }Log_Level;
 
-void _log_output(Log_Level level, const char * message, ...);
+void _log_output(u8 level, const char * message, ...);
 
 // === MACROS ===
 
@@ -29,5 +30,9 @@ void _log_output(Log_Level level, const char * message, ...);
 
 // Logs a DEBUG level message
 #ifndef PODEBUG
-#define PODEBUG(message, ...) _log_output(LOG_DEBUG, message, __VA_ARGS__)
+#ifdef _DEBUG
+	#define PODEBUG(message, ...) _log_output(LOG_DEBUG, message, __VA_ARGS__)
+#else 
+	#define PODEBUG 
+#endif 
 #endif 

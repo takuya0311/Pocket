@@ -1,4 +1,4 @@
-#include "window.h"
+#include "window_internal.h"
 #include "../global.h"
 #include "../core/logger.h"
 
@@ -23,6 +23,8 @@ u8 window_create(void)
        POFATAL("Failed to create SDL window.");
        return FALSE;
     }
+
+    POINFO("Window created succesfully. Width: %d, Height: %d", global.window.w, global.window.h);
 
     return TRUE;
 }

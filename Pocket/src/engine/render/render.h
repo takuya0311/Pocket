@@ -1,12 +1,15 @@
 #pragma once
 #include "../defines.h"
-#include <SDL2/SDL.h>
+#include "../math/math.h"
 
-typedef struct render_state
+typedef struct Color32
 {
-	SDL_Renderer *renderer;
-	u32 w;
-	u32 h;
-}Render_State;
+	u8 b;
+	u8 g;
+	u8 r;
+	u8 a;
+}Color32;
 
-u8 render_create(void);
+void render_fill_rect(Vec2 position, Vec2 size, Color32 color);
+
+#define WHITE (Color32){255, 255, 255, 255}

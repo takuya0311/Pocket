@@ -2,7 +2,9 @@
 
 #ifdef PO_PLATFORM_WINDOWS
 
+#pragma warning (push,0)
 #include <windows.h>
+#pragma pop
 #include <stdio.h>
 
 void platform_console_log(const char *message, u8 level)
