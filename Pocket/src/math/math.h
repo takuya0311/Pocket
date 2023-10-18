@@ -22,3 +22,5 @@ typedef union Vec2_u
 Vec2 vec2_add(Vec2 vector1, Vec2 vector2);
 
 Vec2 vec2_sub(Vec2 vector1, Vec2 Vector2);
+
+void vec2_devide_by(i32 n, Vec2 *dest, Vec2 *source);

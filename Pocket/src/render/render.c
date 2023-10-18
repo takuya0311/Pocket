@@ -1,5 +1,4 @@
 #include "render.h"
-#include "render_internal.h"
 
 #include "../global.h"
 #include "../core/logger.h"
@@ -40,7 +39,7 @@ void render_end(void)
 	SDL_RenderPresent(global.render.renderer);
 }
 
-void render_fill_rect(Vec2 position, Vec2 size, Color32 color)
+POAPI void render_fill_rect(Vec2 position, Vec2 size, Color32 color)
 {
 	// Set a color of the rectangle
 	SDL_SetRenderDrawColor(global.render.renderer, color.r, color.g, color.b, color.a);

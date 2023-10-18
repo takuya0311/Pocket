@@ -32,3 +32,10 @@ typedef char b8;
 #else
 #error "Pocket game engine only works on Windows!"
 #endif
+
+// declspec configuration
+#ifdef POEXPORT
+#define POAPI __declspec(dllexport)
+#else
+#define POAPI __declspec(dllimport)
+#endif

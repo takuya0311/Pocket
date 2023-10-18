@@ -1,13 +1,10 @@
 #include "app.h"
-#include "app_internal.h"
 
 #include "../global.h"
-#include "../core/logger.h"
-#include "../core/logger_internal.h"
-#include "window_internal.h"
-#include "../render/render_internal.h"
-
-#include <stdio.h>
+#include "logger.h"
+#include "window.h"
+#include "../time/time.h"
+#include "../ECS/ecs.h"
 
 static void app_run(Config *config);
 
@@ -28,21 +25,30 @@ u8 app_start(Config *config)
     }
 
     // Initializing subsystems
-    // Logging system
     if (!log_initialize())
     {
         POFATAL("Failed to initialize logging system. Shutting down.");
         return FALSE;
     }
+
+    if (!time_initialize(config->frame_rate_target))
+    {
+        POFATAL("Failed to initialize time system. Shutting down");
+        return FALSE;
+    }
+
+    if (!ecs_initialize())
+    {
+        POFATAL("Failed to initialize ECS system. Shutting down.");
+        return FALSE;
+    }
     
-    // Create SDL Window
     if (!window_create())
     {
         POFATAL("Failed in window creation.");
         return FALSE;
     }
    
-    // Create SDL Renderer
     if (!render_create())
     {
         POFATAL("Failed in render creation.");
@@ -63,6 +69,8 @@ static void app_run(Config *config)
     // Game loop
     while (!global.app.should_quit)
     {
+        time_update();
+        
         SDL_Event e;
         
         while (SDL_PollEvent(&e))
@@ -76,7 +84,7 @@ static void app_run(Config *config)
         }
 
         // Do user update
-        if (!config->user_update((f32)0))
+        if (!config->user_update((f32)global.time.delta))
         {
             POFATAL("Failed to conduct user updates.");
             break;
@@ -91,5 +99,10 @@ static void app_run(Config *config)
         }
 
         render_end();
+
+        time_update_late();
     }
+
+    // Shutdown subsystems
+    log_shutdown();
 }

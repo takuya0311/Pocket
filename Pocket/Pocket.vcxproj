@@ -19,13 +19,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -55,7 +55,7 @@
     <ClCompile>
       <WarningLevel>EnableAllWarnings</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>POEXPORT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\work\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4464;4668;4820</DisableSpecificWarnings>
@@ -66,6 +66,10 @@
       <AdditionalLibraryDirectories>C:\work\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2main.lib;SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -73,7 +77,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>POEXPORT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\work\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4464;4668;4820</DisableSpecificWarnings>
@@ -86,32 +90,36 @@
       <AdditionalLibraryDirectories>C:\work\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2main.lib;SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\engine\core\app.c" />
-    <ClCompile Include="src\engine\core\logger.c" />
-    <ClCompile Include="src\engine\core\window.c" />
-    <ClCompile Include="src\engine\ECS\ecs.c" />
-    <ClCompile Include="src\engine\global.c" />
-    <ClCompile Include="src\engine\math\math.c" />
-    <ClCompile Include="src\engine\platform\win32.c" />
-    <ClCompile Include="src\engine\render\render.c" />
-    <ClCompile Include="src\game\main.c" />
+    <ClCompile Include="src\core\app.c" />
+    <ClCompile Include="src\core\logger.c" />
+    <ClCompile Include="src\core\window.c" />
+    <ClCompile Include="src\ECS\ecs.c" />
+    <ClCompile Include="src\global.c" />
+    <ClCompile Include="src\math\math.c" />
+    <ClCompile Include="src\physics\physics.c" />
+    <ClCompile Include="src\platform\win32.c" />
+    <ClCompile Include="src\render\render.c" />
+    <ClCompile Include="src\time\time.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\engine\core\app.h" />
-    <ClInclude Include="src\engine\core\app_internal.h" />
-    <ClInclude Include="src\engine\core\logger.h" />
-    <ClInclude Include="src\engine\core\logger_internal.h" />
-    <ClInclude Include="src\engine\core\window_internal.h" />
-    <ClInclude Include="src\engine\defines.h" />
-    <ClInclude Include="src\engine\ECS\ecs.h" />
-    <ClInclude Include="src\engine\global.h" />
-    <ClInclude Include="src\engine\math\math.h" />
-    <ClInclude Include="src\engine\platform\platform.h" />
-    <ClInclude Include="src\engine\Pocket.h" />
-    <ClInclude Include="src\engine\render\render.h" />
-    <ClInclude Include="src\engine\render\render_internal.h" />
+    <ClInclude Include="src\core\app.h" />
+    <ClInclude Include="src\core\logger.h" />
+    <ClInclude Include="src\core\window.h" />
+    <ClInclude Include="src\defines.h" />
+    <ClInclude Include="src\ECS\ecs.h" />
+    <ClInclude Include="src\global.h" />
+    <ClInclude Include="src\math\math.h" />
+    <ClInclude Include="src\physics\physics.h" />
+    <ClInclude Include="src\platform\platform.h" />
+    <ClInclude Include="src\Pocket.h" />
+    <ClInclude Include="src\render\render.h" />
+    <ClInclude Include="src\time\time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

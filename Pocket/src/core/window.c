@@ -1,4 +1,4 @@
-#include "window_internal.h"
+#include "window.h"
 #include "../global.h"
 #include "../core/logger.h"
 
