@@ -42,6 +42,12 @@ u8 app_start(Config *config)
         POFATAL("Failed to initialize ECS system. Shutting down.");
         return FALSE;
     }
+
+    if (!input_initialize())
+    {
+        POFATAL("Failed to initialize inout system. Shutting down.");
+        return FALSE;
+    }
     
     if (!window_create())
     {
@@ -83,6 +89,9 @@ static void app_run(Config *config)
             }
         }
 
+        // update keyboard state
+        SDL_PumpEvents();
+
         // Do user update
         if (!config->user_update((f32)global.time.delta))
         {
@@ -100,9 +109,13 @@ static void app_run(Config *config)
 
         render_end();
 
+        // copy keyboard state
+        input_update();
+
         time_update_late();
     }
 
     // Shutdown subsystems
     log_shutdown();
+    ecs_shutdown();
 }

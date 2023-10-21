@@ -9,7 +9,7 @@ enum log_level
 	LOG_DEBUG,
 }Log_Level;
 
-void _log_output(u8 level, const char * message, ...);
+POAPI void _log_output(u8 level, const char * message, ...);
 b8 log_initialize(void);
 void log_shutdown(void);
 

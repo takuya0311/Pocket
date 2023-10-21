@@ -3,10 +3,6 @@
 #include "../math/math.h"
 #include "../render/render.h"
 
-#pragma warning (push, 0)
-#include <SDL2/SDL.h>
-#pragma pop
-
 // Components 
 typedef struct TransformComp
 {
@@ -18,7 +14,8 @@ typedef struct TransformComp
 
 typedef struct VisibilityComp
 {
-	SDL_Rect rect;
+	Vec2 pos;
+	Vec2 size;
 	Color32 color;
 	b8 active;
 }VisibilityComp;
@@ -38,6 +35,7 @@ typedef struct ComponentArrays
 }ComponentArrays;
 
 b8 ecs_initialize();
+void ecs_shutdown();
 
 POAPI u64 ecs_get_entity_count(void);
 

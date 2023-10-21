@@ -39,10 +39,13 @@
     <ClCompile Include="src\time\time.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\physics\physics.c">
+    <ClCompile Include="src\physics\collision.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\math\math.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\input.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,10 +80,16 @@
     <ClInclude Include="src\time\time.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\physics\physics.h">
+    <ClInclude Include="src\physics\collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\math\math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\render_internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

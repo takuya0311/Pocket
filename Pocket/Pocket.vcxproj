@@ -101,24 +101,27 @@
     <ClCompile Include="src\core\window.c" />
     <ClCompile Include="src\ECS\ecs.c" />
     <ClCompile Include="src\global.c" />
+    <ClCompile Include="src\core\input.c" />
     <ClCompile Include="src\math\math.c" />
-    <ClCompile Include="src\physics\physics.c" />
+    <ClCompile Include="src\physics\collision.c" />
     <ClCompile Include="src\platform\win32.c" />
     <ClCompile Include="src\render\render.c" />
     <ClCompile Include="src\time\time.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\app.h" />
+    <ClInclude Include="src\core\input.h" />
     <ClInclude Include="src\core\logger.h" />
     <ClInclude Include="src\core\window.h" />
     <ClInclude Include="src\defines.h" />
     <ClInclude Include="src\ECS\ecs.h" />
     <ClInclude Include="src\global.h" />
     <ClInclude Include="src\math\math.h" />
-    <ClInclude Include="src\physics\physics.h" />
+    <ClInclude Include="src\physics\collision.h" />
     <ClInclude Include="src\platform\platform.h" />
     <ClInclude Include="src\Pocket.h" />
     <ClInclude Include="src\render\render.h" />
+    <ClInclude Include="src\render\render_internal.h" />
     <ClInclude Include="src\time\time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

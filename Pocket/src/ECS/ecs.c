@@ -16,7 +16,7 @@ typedef struct EntityManager
 
 static EntityManager entity_memory_pool;
 
-static const i32 max_entity = 3000;
+static const i32 max_entity = 5000;
 
 b8 ecs_initialize(void)
 {
@@ -37,6 +37,15 @@ b8 ecs_initialize(void)
 	}
 
 	return TRUE;
+}
+
+void ecs_shutdown(void)
+{
+	free(entity_memory_pool.components.trans_comps);
+	free(entity_memory_pool.components.vis_comps);
+	free(entity_memory_pool.components.bb_comps);
+	free(entity_memory_pool.tags);
+	free(entity_memory_pool.flags);
 }
 
 POAPI i64 ecs_entity_create(const char *tag)
@@ -94,10 +103,10 @@ POAPI b8 ecs_vis_comp_add(u64 entity_id, Vec2 size, Color32 color)
 		return FALSE;
 	}
 
-	entity_memory_pool.components.vis_comps[entity_id].rect.x = trans_comp->position.x;
-	entity_memory_pool.components.vis_comps[entity_id].rect.x = trans_comp->position.x;
-	entity_memory_pool.components.vis_comps[entity_id].rect.w = size.w;
-	entity_memory_pool.components.vis_comps[entity_id].rect.h = size.h;
+	entity_memory_pool.components.vis_comps[entity_id].pos.x = trans_comp->position.x;
+	entity_memory_pool.components.vis_comps[entity_id].pos.x = trans_comp->position.x;
+	entity_memory_pool.components.vis_comps[entity_id].size.w = size.w;
+	entity_memory_pool.components.vis_comps[entity_id].size.h = size.h;
 	entity_memory_pool.components.vis_comps[entity_id].color = color;
 	entity_memory_pool.components.vis_comps[entity_id].active = TRUE;
 

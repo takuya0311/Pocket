@@ -28,7 +28,7 @@ b8 log_initialize(void)
 	return TRUE;
 }
 
-void _log_output(u8 level, const char* message, ...)
+POAPI void _log_output(u8 level, const char* message, ...)
 {
 	// Level strings 
 	const char *level_string[4] = { "[FATAL]: ", "[ERROR]: ", "[INFO ]: ", "[DEBUG]: "};
